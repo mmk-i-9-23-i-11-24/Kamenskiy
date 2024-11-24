@@ -1,0 +1,35 @@
+@startuml
+|#Azure|Взаимодействие с приложением|
+start
+#LightBlue :Зайти в приложение;
+
+|#FloralWhite|Выбор товара|
+
+  repeat
+if (Товар понравился?) then (да)
+  :В корзину;
+else (нет)
+  
+endif
+
+  repeat while (Нужен ещё товар?) is (Да) not (Нет)
+
+if (В корзине есть товар?) then (Да)
+:Войти в корзину;
+
+|#AntiqueWhite|Оплата|
+if (Денег хватит?) then (<color:green>**Да**)
+:Купить товар;
+else (Нет)
+:Редактировать\nкорзину;
+endif
+
+else (Нет)
+endif
+
+#Aquamarine :Закончить покупки;
+
+|Взаимодействие с приложением|
+#LightBlue :Закрыть приложение;
+stop
+@enduml
